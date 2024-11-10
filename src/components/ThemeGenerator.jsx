@@ -3,30 +3,30 @@ import PartyDisplay from "./PartyDisplay";
 import PartyForm from  "./PartyForm";
 
 const themeList = [
-	"90-tals fest",
-	"80-tals fest",
-	"Maskerad",
-	"Disco",
-	"Hollywood",
-	"Disney",
+	"90-tals",
+	"80-tals",
+	"maskerad",
+	"disco",
+	"hollywood",
+	"disney",
 ]
 
 const foodList = [
-	"Pizza",
-	"Sushi",
-	"Korv med bröd",
-	"Hamburgare",
-	"Chark",
-	"Knytkalas",
+	"pizza",
+	"sushi",
+	"korv med bröd",
+	"hamburgare",
+	"chark",
+	"knytkalas",
 ]
 
 const musicList = [
-	"Hårdrock",
-	"Techno",
-	"Disco",
-	"Epa-dunk",
-	"Klassiskt",
-	"Tryckare",
+	"hårdrock 🎸",
+	"techno 🆘",
+	"disco 🪩",
+	"epa-dunk 🦄",
+	"klassiskt 🎻",
+	"tryckare ❤️‍🔥",
 ]
 
 export const ThemeGenerator = () => {
@@ -60,7 +60,7 @@ export const ThemeGenerator = () => {
 	return (
 		<>
 			<div>
-				<button onClick={generateTheme}>Snurra för fest!</button>
+				<button onClick={generateTheme}>🎉 Snurra för fest! 🎉</button>
 			</div>
 			<PartyDisplay theme={party.theme} food={party.food} music={party.music} />
 			<PartyForm setNewTheme={setNewTheme} />
