@@ -13,7 +13,7 @@ const PartyForm = (props) => {
 	};
 
 	const handleSubmit = (e) => {
-		e.preventDefault;
+		e.preventDefault();
 
 		props.generateTheme(formData)
 	}
