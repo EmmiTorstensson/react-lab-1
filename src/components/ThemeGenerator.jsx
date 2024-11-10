@@ -1,6 +1,6 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import PartyDisplay from "./PartyDisplay";
-import PartyForm from "./PartyForm";
+import PartyForm from  "./PartyForm";
 
 const themeList = [
 	"90-tals fest",
@@ -29,24 +29,28 @@ const musicList = [
 	"Tryckare",
 ]
 
-
 export const ThemeGenerator = () => {
-	const [theme, setTheme] = useState(["90-tals fest", "Pizza", "Hårdrock"])
+	const [party, setParty] = useState([{
+		theme: "90-tals fest", 
+		food: "Pizza", 
+		music: "Hårdrock"}])
 
 	const generateTheme = () => {
-		const theme = themeList[Math.floor(Math.random() * themeList.length)];
-		const food = foodList[Math.floor(Math.random() * foodList.length)];
-		const music = musicList[Math.floor(Math.random() * musicList.length)];
-
-		setTheme(theme, food, music);
+		const newTheme = {			
+			theme: themeList[Math.floor(Math.random() * themeList.length)],
+			food: foodList[Math.floor(Math.random() * foodList.length)],
+			music: musicList[Math.floor(Math.random() * musicList.length)]
+		}
+		setParty(newTheme);
 	}
 
 	return (
 		<>
 			<div>
+			hej
 				<button onClick={generateTheme}>Snurra fest!</button>
 			</div>
-			<PartyDisplay theme={theme.theme} food={theme.food} music={theme.music} />
+			<PartyDisplay theme={party.theme} food={party.food} music={party.music} />
 			<PartyForm />
 		</>
 	)
