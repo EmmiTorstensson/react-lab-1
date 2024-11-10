@@ -51,7 +51,6 @@ export const ThemeGenerator = () => {
 	return (
 		<>
 			<div>
-			hej
 				<button onClick={generateTheme}>Snurra för fest!</button>
 			</div>
 			<PartyDisplay theme={party.theme} food={party.food} music={party.music} />

@@ -2,10 +2,9 @@
 const PartyDisplay = (props) => {
 	return (
 		<div>
-		<p>test</p>
-			<p>Tema {props.theme}</p>
-			<p>mat {props.food}</p>
-			<p>musik {props.music}</p>
+			<p>Tema: {props.theme}</p>
+			<p>Mat: {props.food}</p>
+			<p>Musik: {props.music}</p>
 		</div>
 	)
 }
