@@ -35,6 +35,8 @@ export const ThemeGenerator = () => {
 		food: "", 
 		music: ""}])
 
+	console.log(themeList, foodList, musicList)
+
 	useEffect(() => {
 		generateTheme();
 	}, []);
@@ -54,7 +56,7 @@ export const ThemeGenerator = () => {
 				<button onClick={generateTheme}>Snurra för fest!</button>
 			</div>
 			<PartyDisplay theme={party.theme} food={party.food} music={party.music} />
-			<PartyForm />
+			<PartyForm generateTheme={generateTheme} />
 		</>
 	)
 }

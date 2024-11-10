@@ -1,9 +1,21 @@
-const PartyForm = () => {
+import { useState } from "react";
+
+const PartyForm = (props) => {
+	const [formData, setFormData] = useState({
+		input_theme: "",
+		input_food: "",
+		input_music: "",
+	})
+
+	const handleChange = (e) => {
+		const {name, value} = e.target;
+		setFormData((prev) => ({...prev, [name]: value}));
+	};
 
 	const handleSubmit = (e) => {
 		e.preventDefault;
 
-		console.log("skickat!")
+		props.generateTheme(formData)
 	}
 
 	return (
@@ -12,19 +24,23 @@ const PartyForm = () => {
 			<input 
 				type="text" 
 				name="input_theme"
+				value={formData.input_theme}
 				placeholder="Tema"
+				onChange={handleChange}
 				required
 			/>
 			<input 
 				type="text" 
 				name="input_food"
 				placeholder="Mat"
+				onChange={handleChange}
 				required
 			/>
 			<input 
 				type="text"
 				name="input_music"
 				placeholder="Musik"
+				onChange={handleChange}
 				required
 			/>
 			<button 
