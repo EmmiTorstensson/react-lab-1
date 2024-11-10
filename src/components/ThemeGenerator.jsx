@@ -31,9 +31,13 @@ const musicList = [
 
 export const ThemeGenerator = () => {
 	const [party, setParty] = useState([{
-		theme: "90-tals fest", 
-		food: "Pizza", 
-		music: "Hårdrock"}])
+		theme: "", 
+		food: "", 
+		music: ""}])
+
+	useEffect(() => {
+		generateTheme();
+	}, []);
 
 	const generateTheme = () => {
 		const newTheme = {			
@@ -48,7 +52,7 @@ export const ThemeGenerator = () => {
 		<>
 			<div>
 			hej
-				<button onClick={generateTheme}>Snurra fest!</button>
+				<button onClick={generateTheme}>Snurra för fest!</button>
 			</div>
 			<PartyDisplay theme={party.theme} food={party.food} music={party.music} />
 			<PartyForm />
