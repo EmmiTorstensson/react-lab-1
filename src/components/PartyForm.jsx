@@ -15,7 +15,7 @@ const PartyForm = (props) => {
 	const handleSubmit = (e) => {
 		e.preventDefault();
 
-		props.generateTheme(formData)
+		props.setNewTheme(formData)
 	}
 
 	return (
